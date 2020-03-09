@@ -15,6 +15,7 @@ defmodule VotingWeb.Admin.SessionControllerTest do
       conn = post(conn, path, %{"email" => "john_wick@gmail.com", "password" => "123456"})
 
       assert %{"status" => "ok", "data" => %{"name" => "John Wick"}} = json_response(conn, 200)
+      refute [] == get_resp_header(conn, "jwt_token")
     end
 
     test "return error when admin email is not valid", %{conn: conn, path: path} do

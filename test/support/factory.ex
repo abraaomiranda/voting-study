@@ -1,5 +1,7 @@
 defmodule Voting.Factory do
-  # with Ecto
+  @moduledoc """
+  Factory
+  """
   use ExMachina.Ecto, repo: Voting.Repo
 
   def admin_factory do

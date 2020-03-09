@@ -26,6 +26,10 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :voting, VotingWeb.Guardian,
+       issuer: "voting",
+       secret_key: "3gfLcEhu0Ad2TmlWm5smWOBTOgKiTuGtPC+k5IAD3lH3BODZuEXOhSPFhp40F7IA"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
