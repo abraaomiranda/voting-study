@@ -7,7 +7,7 @@ defmodule Voting.CreateElection do
 
   alias Voting.{Election, Repo}
 
-  def run(%{admin: admin} = params) do
+  def run(%{"admin" => admin} = params) do
     %Election{}
     |> cast(params, [:name, :cover, :notice, :starts_at, :ends_at])
     |> put_assoc(:created_by, admin)

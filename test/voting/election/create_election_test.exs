@@ -12,12 +12,12 @@ defmodule Voting.CreateElectionTest do
 
     test "returns struct when the params are valid", %{admin: admin} do
       params = %{
-        name: "Election",
-        cover: "url",
-        notice: "url",
-        starts_at: ~U[2020-02-01 11:00:00Z],
-        ends_at: ~U[2020-02-29 11:00:00Z],
-        admin: admin
+        "name" => "Election",
+        "cover" => "url",
+        "notice" => "url",
+        "starts_at" => ~U[2020-02-01 11:00:00Z],
+        "ends_at" => ~U[2020-02-29 11:00:00Z],
+        "admin" => admin
       }
 
       assert {:ok, %Election{} = election} = CreateElection.run(params)
@@ -31,12 +31,12 @@ defmodule Voting.CreateElectionTest do
 
     test "returns error when name is missing", %{admin: admin} do
       params = %{
-        name: "",
-        cover: "url",
-        notice: "url",
-        starts_at: ~U[2020-02-01 11:00:00Z],
-        ends_at: ~U[2020-02-29 11:00:00Z],
-        admin: admin
+        "name" => "",
+        "cover" => "url",
+        "notice" => "url",
+        "starts_at" => ~U[2020-02-01 11:00:00Z],
+        "ends_at" => ~U[2020-02-29 11:00:00Z],
+        "admin" => admin
       }
 
       assert {:error, %Ecto.Changeset{} = changeset} = CreateElection.run(params)
@@ -45,12 +45,12 @@ defmodule Voting.CreateElectionTest do
 
     test "returns error when starts_at is missing", %{admin: admin} do
       params = %{
-        name: "Election",
-        cover: "url",
-        notice: "url",
-        starts_at: nil,
-        ends_at: ~U[2020-02-29 11:00:00Z],
-        admin: admin
+        "name" => "Election",
+        "cover" => "url",
+        "notice" => "url",
+        "starts_at" => nil,
+        "ends_at" => ~U[2020-02-29 11:00:00Z],
+        "admin" => admin
       }
 
       assert {:error, %Ecto.Changeset{} = changeset} = CreateElection.run(params)
@@ -59,12 +59,12 @@ defmodule Voting.CreateElectionTest do
 
     test "returns error when ends_at is missing", %{admin: admin} do
       params = %{
-        name: "Election",
-        cover: "url",
-        notice: "url",
-        starts_at: ~U[2020-02-01 11:00:00Z],
-        ends_at: nil,
-        admin: admin
+        "name" => "Election",
+        "cover" => "url",
+        "notice" => "url",
+        "starts_at" => ~U[2020-02-01 11:00:00Z],
+        "ends_at" => nil,
+        "admin" => admin
       }
 
       assert {:error, %Ecto.Changeset{} = changeset} = CreateElection.run(params)
@@ -73,12 +73,12 @@ defmodule Voting.CreateElectionTest do
 
     test "returns error when ends_at is before starts_at", %{admin: admin} do
       params = %{
-        name: "Election",
-        cover: "url",
-        notice: "url",
-        starts_at: ~U[2020-03-01 11:00:00Z],
-        ends_at: ~U[2020-02-29 11:00:00Z],
-        admin: admin
+        "name" => "Election",
+        "cover" => "url",
+        "notice" => "url",
+        "starts_at" => ~U[2020-03-01 11:00:00Z],
+        "ends_at" => ~U[2020-02-29 11:00:00Z],
+        "admin" => admin
       }
 
       assert {:error, %Ecto.Changeset{} = changeset} = CreateElection.run(params)
@@ -87,12 +87,12 @@ defmodule Voting.CreateElectionTest do
 
     test "returns error when admin is missing" do
       params = %{
-        name: "Election",
-        cover: "url",
-        notice: "url",
-        starts_at: ~U[2020-02-01 11:00:00Z],
-        ends_at: ~U[2020-02-29 11:00:00Z],
-        admin: nil
+        "name" => "Election",
+        "cover" => "url",
+        "notice" => "url",
+        "starts_at" => ~U[2020-02-01 11:00:00Z],
+        "ends_at" => ~U[2020-02-29 11:00:00Z],
+        "admin" => nil
       }
 
       assert {:error, %Ecto.Changeset{} = changeset} = CreateElection.run(params)
