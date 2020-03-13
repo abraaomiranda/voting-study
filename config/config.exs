@@ -31,8 +31,14 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 config :voting, VotingWeb.Guardian,
-       issuer: "voting",
-       secret_key: "3gfLcEhu0Ad2TmlWm5smWOBTOgKiTuGtPC+k5IAD3lH3BODZuEXOhSPFhp40F7IA"
+  issuer: "voting",
+  secret_key: "3gfLcEhu0Ad2TmlWm5smWOBTOgKiTuGtPC+k5IAD3lH3BODZuEXOhSPFhp40F7IA"
+
+config :ex_aws,
+  region: "us-east-2",
+  json_codec: Jason
+
+config :voting, uploads_bucket: "abraao-voting-elixir", file_module: File
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
