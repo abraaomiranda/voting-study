@@ -13,7 +13,7 @@ defmodule Voting.CreateElection do
     |> put_assoc(:created_by, admin)
     |> validate_required([:name, :starts_at, :ends_at, :created_by])
     |> validate_date_overlap()
-    |> Repo.insert
+    |> Repo.insert()
   end
 
   defp validate_date_overlap(%Ecto.Changeset{valid?: true} = changeset) do

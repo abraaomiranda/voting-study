@@ -20,4 +20,4 @@ defmodule Voting.CreateAdmin do
   end
 
   defp put_password(changeset), do: changeset
- end
+end

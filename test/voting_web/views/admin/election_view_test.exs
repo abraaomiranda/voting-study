@@ -16,7 +16,7 @@ defmodule VotingWeb.Admin.ElectionViewTest do
                  cover: "http-to-an-image",
                  notice: "http-to-a-pdf",
                  starts_at: ~U[2020-02-01 11:00:00Z],
-                 ends_at: ~U[2020-02-29 11:00:00Z],
+                 ends_at: ~U[2020-02-29 11:00:00Z]
                }
              } = ElectionView.render("election.json", %{election: election})
     end

@@ -23,5 +23,4 @@ defmodule Voting.SignInAdminTest do
       assert {:error, :invalid_email_or_password} = SignInAdmin.run("email@example.com", "12345")
     end
   end
-
 end
