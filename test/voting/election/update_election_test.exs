@@ -1,7 +1,7 @@
 defmodule Voting.UpdateElectionTest do
   use Voting.DataCase, async: true
 
-  alias Voting.{UpdateElection, Election}
+  alias Voting.{Election, UpdateElection}
 
   import Voting.Factory
 

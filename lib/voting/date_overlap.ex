@@ -5,7 +5,11 @@ defmodule Voting.DateOverlap do
 
   import Ecto.Changeset, only: [get_field: 2, add_error: 3]
 
-  def validate_date_overlap(%Ecto.Changeset{valid?: true} = changeset, first_date_field, second_date_field) do
+  def validate_date_overlap(
+        %Ecto.Changeset{valid?: true} = changeset,
+        first_date_field,
+        second_date_field
+      ) do
     first_date = get_field(changeset, first_date_field)
     second_date = get_field(changeset, second_date_field)
 

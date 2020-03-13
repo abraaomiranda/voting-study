@@ -9,4 +9,3 @@ defmodule Voting.ElectionRepo do
     Repo.get!(Election, id)
   end
 end
-
