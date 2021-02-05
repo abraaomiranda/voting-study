@@ -1,11 +1,10 @@
 defmodule VotingWeb.Admin.SessionControllerTest do
-
   use VotingWeb.ConnCase, async: true
 
   import Voting.Factory
 
   describe "create/2" do
-    setup %{conn: conn}do
+    setup %{conn: conn} do
       insert(:admin, name: "John Wick", email: "john_wick@gmail.com")
 
       %{conn: conn, path: "api/v1/admin/sign_in"}

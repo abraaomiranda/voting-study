@@ -29,3 +29,4 @@ voting-*.tar
 
 .elixir_ls
 .vscode
+config/dev.secret.exs

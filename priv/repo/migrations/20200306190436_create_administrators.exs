@@ -9,6 +9,5 @@ defmodule Voting.Repo.Migrations.CreateAdministrators do
 
       timestamps()
     end
-
   end
 end

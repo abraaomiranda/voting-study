@@ -12,6 +12,6 @@ defmodule VotingWeb.Guardian do
   def resource_from_claims(claims) do
     id = claims["sub"]
     resource = Voting.AdminRepo.get_admin!(id)
-    {:ok,  resource}
+    {:ok, resource}
   end
 end
